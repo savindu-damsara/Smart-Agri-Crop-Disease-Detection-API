@@ -1,0 +1,341 @@
+====================================================================== 
+SMART AGRI - DATASET PREPARATION 
+====================================================================== 
+ 
+Scanning dataset... 
+ 
+Images found: 54,305 
+Classes found: 38 
+ 
+Checking for exact duplicate files... 
+Processed 5,000 images... 
+Processed 10,000 images... 
+Processed 15,000 images... 
+Processed 20,000 images... 
+Processed 25,000 images... 
+Processed 30,000 images... 
+Processed 35,000 images... 
+Processed 40,000 images... 
+Processed 45,000 images... 
+Processed 50,000 images... 
+ 
+Exact duplicate image records: 42 
+Duplicate records removed: 21 
+Unique images available: 54,284 
+ 
+====================================================================== 
+SPLIT SUMMARY 
+====================================================================== 
+Training images   : 43,427 
+Validation images : 5,428 
+Test images       : 5,429 
+Total images      : 54,284 
+ 
+Class distribution by split: 
+split                                               test  train  validation 
+class_name                                                                  
+Apple___Apple_scab                                    63    504          63 
+Apple___Black_rot                                     62    497          62 
+Apple___Cedar_apple_rust                              27    220          28 
+Apple___healthy                                      164   1310         164 
+Blueberry___healthy                                  150   1202         150 
+Cherry_(including_sour)___Powdery_mildew             105    842         105 
+Cherry_(including_sour)___healthy                     85    683          86 
+Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot    51    410          52 
+Corn_(maize)___Common_rust_                          119    954         119 
+Corn_(maize)___Northern_Leaf_Blight                   98    788          99 
+Corn_(maize)___healthy                               116    930         116 
+Grape___Black_rot                                    118    944         118 
+Grape___Esca_(Black_Measles)                         139   1106         138 
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot)           108    861         107 
+Grape___healthy                                       42    338          43 
+Orange___Haunglongbing_(Citrus_greening)             551   4405         551 
+Peach___Bacterial_spot                               230   1837         230 
+Peach___healthy                                       36    288          36 
+Pepper,_bell___Bacterial_spot                        100    798          99 
+Pepper,_bell___healthy                               148   1182         148 
+Potato___Early_blight                                100    800         100 
+Potato___Late_blight                                 100    800         100 
+Potato___healthy                                      15    122          15 
+Raspberry___healthy                                   37    297          37 
+Soybean___healthy                                    509   4072         509 
+Squash___Powdery_mildew                              184   1468         183 
+Strawberry___Leaf_scorch                             111    887         111 
+Strawberry___healthy                                  45    365          46 
+Tomato___Bacterial_spot                              213   1702         212 
+Tomato___Early_blight                                100    800         100 
+Tomato___Late_blight                                 190   1521         190 
+Tomato___Leaf_Mold                                    95    762          95 
+Tomato___Septoria_leaf_spot                          177   1417         177 
+Tomato___Spider_mites Two-spotted_spider_mite        168   1341         167 
+Tomato___Target_Spot                                 141   1123         140 
+Tomato___Tomato_Yellow_Leaf_Curl_Virus               536   4285         536 
+Tomato___Tomato_mosaic_virus                          37    298          38 
+Tomato___healthy                                     159   1268         158 
+ 
+====================================================================== 
+DATASET PREPARATION COMPLETED 
+=================================================== ============================================================
+PYTORCH DATALOADER TEST
+============================================================
+Training samples   : 43,427
+Validation samples : 5,428
+Test samples       : 5,429
+Batch size         : 32
+
+Image batch shape  : torch.Size([32, 3, 224, 224])
+Label batch shape  : torch.Size([32])
+First labels       : [13, 11, 24, 10, 35, 24, 15, 15, 16, 1]
+
+DataLoader test successful! proceed 
+
+
+Output of the train.py :
+
+============================================================
+SMART AGRI - PYTORCH TRAINING
+============================================================
+
+Device: cuda
+Batch size: 32
+Epochs: 20
+Learning rate: 0.001
+
+Loading datasets...
+Training samples: 43427
+Validation samples: 5428
+
+Creating model...
+Model created successfully.
+
+Calculating class weights...
+Class weights calculated.
+
+Epoch 1/20
+--------------------------------------------------
+Train Loss      : 1.6921
+Train Accuracy  : 0.5527
+Validation Loss : 0.6632
+Validation Acc  : 0.8078
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 2/20
+--------------------------------------------------
+Train Loss      : 1.0094
+Train Accuracy  : 0.7210
+Validation Loss : 0.5231
+Validation Acc  : 0.8412
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 3/20
+--------------------------------------------------
+Train Loss      : 0.8162
+Train Accuracy  : 0.7733
+Validation Loss : 0.4553
+Validation Acc  : 0.8565
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 4/20
+--------------------------------------------------
+Train Loss      : 0.6928
+Train Accuracy  : 0.8049
+Validation Loss : 0.3326
+Validation Acc  : 0.9000
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 5/20
+--------------------------------------------------
+Train Loss      : 0.6157
+Train Accuracy  : 0.8288
+Validation Loss : 0.3153
+Validation Acc  : 0.9075
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 6/20
+--------------------------------------------------
+Train Loss      : 0.5608
+Train Accuracy  : 0.8450
+Validation Loss : 0.2351
+Validation Acc  : 0.9287
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 7/20
+--------------------------------------------------
+Train Loss      : 0.5072
+Train Accuracy  : 0.8587
+Validation Loss : 0.2573
+Validation Acc  : 0.9248
+Learning Rate   : 0.00100000
+
+No validation improvement.
+Patience: 1/5
+
+Epoch 8/20
+--------------------------------------------------
+Train Loss      : 0.4679
+Train Accuracy  : 0.8691
+Validation Loss : 0.2128
+Validation Acc  : 0.9403
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 9/20
+--------------------------------------------------
+Train Loss      : 0.4451
+Train Accuracy  : 0.8793
+Validation Loss : 0.2083
+Validation Acc  : 0.9398
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 10/20
+--------------------------------------------------
+Train Loss      : 0.4198
+Train Accuracy  : 0.8856
+Validation Loss : 0.2138
+Validation Acc  : 0.9379
+Learning Rate   : 0.00100000
+
+No validation improvement.
+Patience: 1/5
+
+Epoch 11/20
+--------------------------------------------------
+Train Loss      : 0.3991
+Train Accuracy  : 0.8902
+Validation Loss : 0.1918
+Validation Acc  : 0.9436
+Learning Rate   : 0.00100000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 12/20
+--------------------------------------------------
+Train Loss      : 0.3785
+Train Accuracy  : 0.8967
+Validation Loss : 0.2225
+Validation Acc  : 0.9370
+Learning Rate   : 0.00100000
+
+No validation improvement.
+Patience: 1/5
+
+Epoch 13/20
+--------------------------------------------------
+Train Loss      : 0.3592
+Train Accuracy  : 0.9006
+Validation Loss : 0.2093
+Validation Acc  : 0.9458
+Learning Rate   : 0.00100000
+
+No validation improvement.
+Patience: 2/5
+
+Epoch 14/20
+--------------------------------------------------
+Train Loss      : 0.3500
+Train Accuracy  : 0.9042
+Validation Loss : 0.2001
+Validation Acc  : 0.9495
+Learning Rate   : 0.00050000
+
+No validation improvement.
+Patience: 3/5
+
+Epoch 15/20
+--------------------------------------------------
+Train Loss      : 0.2541
+Train Accuracy  : 0.9297
+Validation Loss : 0.1331
+Validation Acc  : 0.9665
+Learning Rate   : 0.00050000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+Epoch 16/20
+--------------------------------------------------
+Train Loss      : 0.2300
+Train Accuracy  : 0.9371
+Validation Loss : 0.1410
+Validation Acc  : 0.9672
+Learning Rate   : 0.00050000
+
+No validation improvement.
+Patience: 1/5
+
+Epoch 17/20
+--------------------------------------------------
+Train Loss      : 0.2255
+Train Accuracy  : 0.9397
+Validation Loss : 0.1454
+Validation Acc  : 0.9628
+Learning Rate   : 0.00050000
+
+No validation improvement.
+Patience: 2/5
+
+Epoch 18/20
+--------------------------------------------------
+Train Loss      : 0.2133
+Train Accuracy  : 0.9437
+Validation Loss : 0.1488
+Validation Acc  : 0.9655
+Learning Rate   : 0.00025000
+
+No validation improvement.
+Patience: 3/5
+
+Epoch 19/20
+--------------------------------------------------
+Train Loss      : 0.1695
+Train Accuracy  : 0.9533
+Validation Loss : 0.1383
+Validation Acc  : 0.9718
+Learning Rate   : 0.00025000
+
+No validation improvement.
+Patience: 4/5
+
+Epoch 20/20
+--------------------------------------------------
+Train Loss      : 0.1659
+Train Accuracy  : 0.9555
+Validation Loss : 0.1211
+Validation Acc  : 0.9746
+Learning Rate   : 0.00025000
+
+✓ New best model saved:
+C:\Users\SAVINDU\Desktop\Projects\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\Smart-Agri-Crop-Disease-Detection-API\models\checkpoints\best_model.pt
+
+============================================================
+TRAINING COMPLETED
+============================================================
+Best validation loss: 0.1211
+Best validation accuracy: 0.9746
+
+Training started at 11.25am and ended all 20 epochs at 12.53pm 
+

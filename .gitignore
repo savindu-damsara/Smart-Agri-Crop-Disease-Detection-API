@@ -11,6 +11,10 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
+models/checkpoints/
+*.pt
+*.pth
+
 # Dataset
 data/raw/
 data/processed/
@@ -22,6 +26,8 @@ models/*.onnx
 models/*.h5
 models/*.keras
 models/*.tflite
+
+
 
 # Logs
 logs/
