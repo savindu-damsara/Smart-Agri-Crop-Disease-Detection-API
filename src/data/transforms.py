@@ -46,7 +46,7 @@ train_transform = transforms.Compose(
 
 # Validation / Test Transformations
 
-validation_transform = transforms.Compose(
+val_transform = transforms.Compose(
     [
         transforms.Resize(
             (IMAGE_SIZE, IMAGE_SIZE)

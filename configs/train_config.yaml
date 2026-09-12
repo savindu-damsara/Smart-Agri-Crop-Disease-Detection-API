@@ -1,0 +1,20 @@
+project:
+  name: Smart-Agri-Crop-Disease-Detection-API
+
+data:
+  image_size: 224
+  batch_size: 32
+  num_workers: 0
+
+model:
+  num_classes: 38
+
+training:
+  epochs: 20
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 5
+  gradient_clip: 1.0
+
+system:
+  seed: 42
