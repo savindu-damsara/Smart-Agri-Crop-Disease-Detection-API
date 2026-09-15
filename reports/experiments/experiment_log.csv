@@ -1,0 +1,5 @@
+experiment_id,model,augmentation,loss,optimizer,learning_rate,weight_decay,val_accuracy,val_macro_f1,test_accuracy,test_macro_f1,status,notes
+0,Baseline CNN,Current,Weighted CrossEntropy,AdamW,0.001,0.0001,0.9746,NA,0.9764,0.9682,completed,Baseline model
+1,Baseline CNN,RandomResizedCrop + existing,Weighted CrossEntropy,AdamW,0.001,0.0001,0.9698,NA,NA,NA,rejected,RandomResizedCrop reduced validation performance compared with baseline
+2,CNN + BatchNorm,Current,Weighted CrossEntropy,AdamW,0.001,0.0001,0.8694,NA,NA,NA,rejected,Batch Normalization substantially reduced validation performance
+3,Deeper CNN,Current,Weighted CrossEntropy,AdamW,0.001,0.0001,0.9784,NA,NA,NA,accepted,Four convolutional blocks improved validation performance; best checkpoint selected by validation loss
