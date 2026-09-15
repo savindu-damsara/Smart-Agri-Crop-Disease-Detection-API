@@ -5,7 +5,15 @@ import torch
 from PIL import Image
 from torchvision import transforms
 
-from src.models.resnet18_transfer import PlantDiseaseResNet18
+from src.config import (
+    IMAGE_SIZE,
+    IMAGE_MEAN,
+    IMAGE_STD,
+)
+
+from src.models.resnet18_transfer import (
+    PlantDiseaseResNet18
+)
 
 
 class PlantDiseasePredictor:

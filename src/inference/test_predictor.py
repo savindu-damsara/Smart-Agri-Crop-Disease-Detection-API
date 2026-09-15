@@ -4,24 +4,16 @@ import pandas as pd
 
 from .predictor import PlantDiseasePredictor
 
+from src.config import (
+    MODEL_CHECKPOINT,
+    DATASET_MANIFEST,
+)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-CHECKPOINT_PATH = (
-    PROJECT_ROOT
-    / "models"
-    / "checkpoints"
-    / "experiments"
-    / "experiment_04"
-    / "best_model.pt"
-)
+CHECKPOINT_PATH = MODEL_CHECKPOINT
 
-MANIFEST_PATH = (
-    PROJECT_ROOT
-    / "data"
-    / "processed"
-    / "dataset_manifest.csv"
-)
+MANIFEST_PATH = DATASET_MANIFEST
 
 
 # --------------------------------------------------

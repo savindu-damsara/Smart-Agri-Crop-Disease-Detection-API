@@ -1462,3 +1462,4 @@ CHECKPOINT SIZES
 Baseline CNN        : 295.19 MB
 ResNet18            : 128.26 MB
 
+test api using : http://127.0.0.1:8000/docs
