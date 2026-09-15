@@ -1,0 +1,29 @@
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+
+    container_name: smart-agri-api
+
+    ports:
+      - "8000:8000"
+
+    restart: unless-stopped
+
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+
+    container_name: smart-agri-ui
+
+    ports:
+      - "8501:8501"
+
+    depends_on:
+      - api
+
+    restart: unless-stopped

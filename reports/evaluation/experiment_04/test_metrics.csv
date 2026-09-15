@@ -1,0 +1,2 @@
+model,checkpoint_epoch,validation_loss,validation_accuracy,test_accuracy,macro_precision,macro_recall,macro_f1,weighted_precision,weighted_recall,weighted_f1
+ResNet18 Transfer Learning,11,0.00897856726881522,0.9976050110537952,0.9963160803094493,0.9941699470046572,0.9936060728222843,0.9938176772230424,0.9963710955750112,0.9963160803094493,0.9963165539804837
