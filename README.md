@@ -15,7 +15,16 @@ FastAPI
 
 http://localhost:8000/docs
 
+Open:
+
+http://localhost:8501
+
+Upload a PlantVillage image and click Analyze Plant.
+
+You should still get the prediction.
+
 ## Objective
+
 
 The goal of this project is to develop an end-to-end deep learning
 system capable of identifying plant diseases from leaf images.
