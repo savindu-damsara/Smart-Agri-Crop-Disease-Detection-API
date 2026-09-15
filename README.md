@@ -7,6 +7,14 @@ TensorFlow, FastAPI and computer vision.
 
 🚧 Currently in development.
 
+Streamlit
+
+http://localhost:8501
+
+FastAPI
+
+http://localhost:8000/docs
+
 ## Objective
 
 The goal of this project is to develop an end-to-end deep learning
