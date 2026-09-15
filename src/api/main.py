@@ -55,13 +55,43 @@ app = FastAPI(
 
 
 # ======================================================
-# LOAD MODEL
+# MODEL LOADING
 # ======================================================
 
-predictor = PlantDiseasePredictor(
-    checkpoint_path=MODEL_CHECKPOINT,
-    manifest_path=DATASET_MANIFEST,
-)
+def create_predictor():
+    """
+    Create the production ML predictor.
+
+    The model is created only when it is actually needed.
+    This prevents the large model checkpoint from being
+    loaded when the API module is imported during testing.
+    """
+
+    return PlantDiseasePredictor(
+        checkpoint_path=MODEL_CHECKPOINT,
+        manifest_path=DATASET_MANIFEST,
+    )
+
+
+# Predictor starts as None.
+# The real model is loaded lazily when required.
+predictor = None
+
+
+def get_predictor():
+    """
+    Return the ML predictor.
+
+    If the predictor has not been created yet,
+    create it and store it for future requests.
+    """
+
+    global predictor
+
+    if predictor is None:
+        predictor = create_predictor()
+
+    return predictor
 
 
 # ======================================================
@@ -90,11 +120,13 @@ def root():
 )
 def health():
 
+    current_predictor = get_predictor()
+
     return {
         "success": True,
         "status": "healthy",
         "model": "ResNet18",
-        "device": str(predictor.device),
+        "device": str(current_predictor.device),
     }
 
 
@@ -108,10 +140,12 @@ def health():
 )
 def model_info():
 
+    current_predictor = get_predictor()
+
     return {
         "model": "ResNet18",
         "num_classes": len(
-            predictor.class_names
+            current_predictor.class_names
         ),
         "image_size": 224,
         "test_accuracy": 0.9963,
@@ -248,7 +282,11 @@ async def predict(
 
     try:
 
-        result = predictor.predict(
+        # Load the real predictor only when prediction
+        # is actually requested.
+        current_predictor = get_predictor()
+
+        result = current_predictor.predict(
             upload_path
         )
 
